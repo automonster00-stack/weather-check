@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Heritage Garage - Premier classic car restoration specialists. Expert restoration of vintage American muscle cars, European classics, and collector vehicles. Full frame-off restorations, engine rebuilds, custom paint, and interior restoration.">
+    <meta name="keywords" content="classic car restoration, vintage car repair, muscle car restoration, antique auto restoration, classic Mustang restoration, Camaro restoration, classic car paint, classic car upholstery">
+    <title>Heritage Garage | Classic Car Restoration Specialists</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --burgundy: #722F37;
+            --burgundy-dark: #4A1C21;
+            --burgundy-light: #8B3A44;
+            --cream: #F5F0E6;
+            --cream-dark: #E8E0D0;
+            --brass: #C9A227;
+            --brass-light: #D4B84A;
+            --charcoal: #2D2D2D;
+            --charcoal-light: #3D3D3D;
+            --chrome: #C0C0C0;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .accent-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: linear-gradient(180deg, rgba(45,45,45,0.98) 0%, rgba(45,45,45,0.95) 100%);
+            backdrop-filter: blur(10px);
+            padding: 0 5%;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--brass);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--charcoal);
+        }
+
+        .logo-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--cream);
+            letter-spacing: 0.1em;
+        }
+
+        .logo-text span {
+            color: var(--brass);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--brass);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--brass);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--burgundy);
+            color: var(--cream) !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0;
+            border: 2px solid var(--burgundy);
+            transition: all 0.3s ease !important;
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--brass) !important;
+            border-color: var(--brass);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--charcoal);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('assets/hero-mustang.png') center center / cover no-repeat;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(45,45,45,0.9) 0%, rgba(114,47,55,0.7) 50%, rgba(45,45,45,0.85) 100%);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(201,162,39,0.03) 2px,
+                    rgba(201,162,39,0.03) 4px
+                );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 5% 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(201,162,39,0.2);
+            border: 1px solid var(--brass);
+            padding: 0.5rem 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--brass);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            color: var(--cream);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--brass);
+        }
+
+        .hero-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--cream-dark);
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            color: var(--chrome);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--burgundy);
+            color: var(--cream);
+            padding: 1rem 2.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid var(--burgundy);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--burgundy-dark);
+            border-color: var(--burgundy-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(114,47,55,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cream);
+            padding: 1rem 2.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid var(--brass);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--brass);
+            color: var(--charcoal);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 1s ease-out 0.3s both;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border: 4px solid var(--brass);
+            box-shadow: 20px 20px 0 rgba(201,162,39,0.3);
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            background: var(--charcoal);
+            padding: 1.5rem 2rem;
+            border-left: 4px solid var(--brass);
+        }
+
+        .hero-stats-grid {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--brass);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--chrome);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Contact Bar */
+        .contact-bar {
+            background: var(--burgundy-dark);
+            padding: 1rem 5%;
+        }
+
+        .contact-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: var(--brass);
+        }
+
+        .contact-item i {
+            color: var(--brass);
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 5%;
+            background: var(--cream);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(180deg, var(--charcoal) 0%, transparent 100%);
+            opacity: 0.05;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .about-image-accent {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--brass);
+            z-index: -1;
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: 30px;
+            right: -30px;
+            background: var(--burgundy);
+            color: var(--cream);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .experience-badge .number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            color: var(--brass);
+            line-height: 1;
+        }
+
+        .experience-badge .text {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--burgundy);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--brass);
+        }
+
+        .about-content h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .about-content h2 span {
+            color: var(--burgundy);
+        }
+
+        .about-lead {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--charcoal-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .about-text {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .about-feature i {
+            color: var(--brass);
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .about-feature h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .about-feature p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 5%;
+            background: var(--charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(201,162,39,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(114,47,55,0.15) 0%, transparent 50%);
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .services-header .section-label {
+            color: var(--brass);
+            justify-content: center;
+        }
+
+        .services-header .section-label::before,
+        .services-header .section-label::after {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--brass);
+        }
+
+        .services-header h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+
+        .services-header p {
+            color: var(--chrome);
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(245,240,230,0.05);
+            border: 1px solid rgba(201,162,39,0.2);
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--brass);
+            transition: height 0.4s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(245,240,230,0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon i {
+            font-size: 1.8rem;
+            color: var(--brass);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--chrome);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: var(--brass);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .service-link:hover {
+            gap: 1rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 8rem 5%;
+            background: var(--cream);
+        }
+
+        .portfolio-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .portfolio-header-text h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--charcoal);
+        }
+
+        .portfolio-header-text h2 span {
+            color: var(--burgundy);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .portfolio-item.featured {
+            grid-column: span 2;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .portfolio-item.featured img {
+            height: 500px;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(45,45,45,0.95) 0%, rgba(45,45,45,0.3) 50%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-tag {
+            background: var(--brass);
+            color: var(--charcoal);
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            width: fit-content;
+        }
+
+        .portfolio-overlay h3 {
+            font-size: 1.8rem;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-overlay p {
+            color: var(--chrome);
+            font-size: 0.95rem;
+        }
+
+        /* Before/After Feature */
+        .before-after {
+            padding: 6rem 5%;
+            background: var(--burgundy-dark);
+            position: relative;
+        }
+
+        .before-after-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .before-after-content {
+            color: var(--cream);
+        }
+
+        .before-after-content .section-label {
+            color: var(--brass);
+        }
+
+        .before-after-content h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .before-after-content p {
+            color: var(--chrome);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .before-after-image {
+            position: relative;
+        }
+
+        .before-after-image img {
+            width: 100%;
+            height: auto;
+            border: 4px solid var(--brass);
+        }
+
+        .ba-labels {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .ba-label {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 0.5rem 1rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 8rem 5%;
+            background: var(--cream-dark);
+        }
+
+        .process-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .process-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+
+        .process-header h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .process-header h2 span {
+            color: var(--burgundy);
+        }
+
+        .process-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 3px;
+            background: var(--brass);
+            z-index: 0;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 100px;
+            height: 100px;
+            background: var(--charcoal);
+            border: 4px solid var(--brass);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--brass);
+            position: relative;
+        }
+
+        .step-number i {
+            font-size: 2rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.3rem;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 8rem 5%;
+            background: var(--charcoal);
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 80px;
+            left: 10%;
+            font-size: 15rem;
+            color: rgba(201,162,39,0.05);
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .testimonials-header .section-label {
+            color: var(--brass);
+            justify-content: center;
+        }
+
+        .testimonials-header h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--cream);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(245,240,230,0.05);
+            border: 1px solid rgba(201,162,39,0.2);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .testimonial-rating {
+            color: var(--brass);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--cream);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(201,162,39,0.2);
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--burgundy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            color: var(--cream);
+        }
+
+        .author-info h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--cream);
+            font-size: 1.1rem;
+        }
+
+        .author-info p {
+            color: var(--chrome);
+            font-size: 0.85rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(201,162,39,0.05) 2px,
+                    rgba(201,162,39,0.05) 4px
+                );
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            color: var(--cream-dark);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta .btn-primary {
+            background: var(--brass);
+            color: var(--charcoal);
+            border-color: var(--brass);
+        }
+
+        .cta .btn-primary:hover {
+            background: var(--brass-light);
+            border-color: var(--brass-light);
+        }
+
+        .cta .btn-secondary {
+            border-color: var(--cream);
+        }
+
+        .cta .btn-secondary:hover {
+            background: var(--cream);
+            color: var(--burgundy);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 5%;
+            background: var(--cream);
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info h2 span {
+            color: var(--burgundy);
+        }
+
+        .contact-info > p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-detail-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--burgundy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-detail-icon i {
+            color: var(--brass);
+            font-size: 1.2rem;
+        }
+
+        .contact-detail-text h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-detail-text p,
+        .contact-detail-text a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-detail-text a:hover {
+            color: var(--burgundy);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--charcoal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cream);
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--burgundy);
+            color: var(--brass);
+        }
+
+        .contact-form {
+            background: var(--charcoal);
+            padding: 3rem;
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            color: var(--cream);
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--cream);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(245,240,230,0.1);
+            border: 1px solid rgba(201,162,39,0.3);
+            color: var(--cream);
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--chrome);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--brass);
+            background: rgba(245,240,230,0.15);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: var(--charcoal);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--burgundy);
+            color: var(--cream);
+            padding: 1.25rem;
+            border: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--burgundy-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            padding: 4rem 5% 2rem;
+            border-top: 4px solid var(--brass);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p {
+            color: var(--chrome);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            color: var(--cream);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: var(--chrome);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--brass);
+        }
+
+        .footer-hours li {
+            display: flex;
+            justify-content: space-between;
+            color: var(--chrome);
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(201,162,39,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: var(--chrome);
+            font-size: 0.9rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-legal a {
+            color: var(--chrome);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--brass);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-ctas {
+                justify-content: center;
+            }
+
+            .about-container,
+            .before-after-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-item.featured {
+                grid-column: span 1;
+            }
+
+            .process-timeline {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-timeline::before {
+                display: none;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--charcoal);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin-top: 2rem;
+            }
+
+            .experience-badge {
+                right: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-bar-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-badge {
+                font-size: 0.75rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-stats-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <span class="logo-text">Heritage <span>Garage</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+            </ul>
+            <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Bar -->
+    <div class="contact-bar">
+        <div class="contact-bar-content">
+            <a href="tel:+15551234567" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>(555) 123-4567</span>
+            </a>
+            <a href="mailto:info@heritagegarage.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@heritagegarage.com</span>
+            </a>
+            <a href="#contact" class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>1234 Classic Drive, Detroit, MI 48201</span>
+            </a>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>Mon-Fri: 8AM-6PM | Sat: 9AM-3PM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i>
+                    Award-Winning Restoration Since 1985
+                </div>
+                <h1>Restoring <span>Legends</span> To Their Glory</h1>
+                <p class="hero-tagline">Where craftsmanship meets passion</p>
+                <p class="hero-description">
+                    Heritage Garage specializes in frame-off restorations of classic American muscle cars and vintage automobiles. Our master craftsmen bring decades of experience to every project, ensuring your classic returns to its original splendor.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-clipboard-list"></i>
+                        Get Free Estimate
+                    </a>
+                    <a href="#portfolio" class="btn-secondary">
+                        <i class="fas fa-images"></i>
+                        View Our Work
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/hero-mustang.png" alt="Restored 1967 Ford Mustang Fastback in burgundy">
+                <div class="hero-stats">
+                    <div class="hero-stats-grid">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Cars Restored</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">40</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="assets/workshop.png" alt="Heritage Garage workshop interior">
+                <div class="about-image-accent"></div>
+                <div class="experience-badge">
+                    <div class="number">40+</div>
+                    <div class="text">Years of Excellence</div>
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="section-label">Our Story</div>
+                <h2>A Legacy of <span>Craftsmanship</span></h2>
+                <p class="about-lead">
+                    "Every classic car tells a story. Our job is to make sure that story continues for generations to come."
+                </p>
+                <p class="about-text">
+                    Founded in 1985 by master mechanic James Heritage, our family-owned shop has grown from a small two-bay garage into a premier restoration facility spanning 25,000 square feet. We've had the privilege of restoring everything from barn-find survivors to concours-winning show cars, each project receiving the same meticulous attention to detail.
+                </p>
+                <p class="about-text">
+                    Our team of certified technicians, upholsterers, painters, and metalworkers combine traditional techniques with modern technology to achieve results that exceed factory specifications. We're not just fixing cars—we're preserving automotive history.
+                </p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <h4>ASE Certified</h4>
+                            <p>Factory-trained technicians</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h4>Fully Insured</h4>
+                            <p>Complete coverage protection</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-trophy"></i>
+                        <div>
+                            <h4>Award Winning</h4>
+                            <p>Multiple concours victories</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-tools"></i>
+                        <div>
+                            <h4>In-House Services</h4>
+                            <p>All work done on premises</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-calendar-alt"></i>
+                    Schedule a Shop Tour
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="services-header">
+                <div class="section-label">What We Offer</div>
+                <h2>Comprehensive Restoration Services</h2>
+                <p>From complete frame-off restorations to specific repairs, we offer the full spectrum of classic car services.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3>Full Frame-Off Restoration</h3>
+                    <p>Complete disassembly, frame restoration, body work, and meticulous reassembly to concours or driver-quality standards. Every nut and bolt inspected and restored.</p>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3>Custom Paint & Body</h3>
+                    <p>Expert metalwork, rust repair, panel alignment, and show-quality paint finishes. We match original colors or create stunning custom finishes.</p>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Engine Rebuilding</h3>
+                    <p>Complete engine and transmission rebuilds to stock specifications or performance upgrades. Dyno-tested for reliability and power.</p>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Interior Restoration</h3>
+                    <p>Authentic upholstery, carpet, headliner, and trim restoration using period-correct materials. Dashboard and gauge restoration included.</p>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Systems</h3>
+                    <p>Complete rewiring, gauge restoration, and electrical system upgrades. Hidden modern amenities available while maintaining classic appearance.</p>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Chrome & Brightwork</h3>
+                    <p>Triple-chrome plating, stainless steel polishing, and aluminum restoration. Show-quality finishes that last for decades.</p>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-container">
+            <div class="portfolio-header">
+                <div class="portfolio-header-text">
+                    <div class="section-label">Our Work</div>
+                    <h2>Featured <span>Restorations</span></h2>
+                </div>
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-folder-open"></i>
+                    View Full Gallery
+                </a>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item featured">
+                    <img src="assets/camaro-blue.png" alt="Restored 1969 Chevrolet Camaro SS">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-tag">Complete Restoration</span>
+                        <h3>1969 Chevrolet Camaro SS</h3>
+                        <p>Full frame-off restoration with matching numbers 396 big block. Concours gold winner at Bloomington Gold.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="assets/chrome-detail.png" alt="Chrome detail work on vintage car">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-tag">Detail Work</span>
+                        <h3>Master Craftsmanship</h3>
+                        <p>Every piece of chrome and brightwork restored to perfection by our skilled artisans.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="assets/upholstery.png" alt="Interior upholstery restoration">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-tag">Interior Restoration</span>
+                        <h3>Authentic Upholstery</h3>
+                        <p>Hand-stitched leather interiors using period-correct materials and techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="before-after">
+        <div class="before-after-container">
+            <div class="before-after-content">
+                <div class="section-label">Transformations</div>
+                <h2>From Forgotten to Flawless</h2>
+                <p>
+                    Every restoration begins with a dream and ends with a masterpiece. We specialize in bringing neglected classics back from the brink, no matter their condition. Our team has successfully restored vehicles that others deemed beyond saving.
+                </p>
+                <p>
+                    Whether you've discovered a barn find, inherited a family heirloom, or have a project that's been waiting in your garage, we have the expertise and passion to bring it back to life.
+                </p>
+                <a href="#contact" class="btn-secondary" style="border-color: var(--brass); color: var(--cream);">
+                    <i class="fas fa-magic"></i>
+                    Start Your Transformation
+                </a>
+            </div>
+            <div class="before-after-image">
+                <img src="assets/before-after.png" alt="Before and after classic car restoration">
+                <div class="ba-labels">
+                    <span class="ba-label">Before</span>
+                    <span class="ba-label">After</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="process-container">
+            <div class="process-header">
+                <div class="section-label">How We Work</div>
+                <h2>Our Restoration <span>Process</span></h2>
+                <p>We follow a proven methodology that ensures quality, transparency, and your complete satisfaction at every stage.</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your vision, assess your vehicle, and provide a detailed estimate with timeline and options.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Documentation</h3>
+                    <p>Complete photographic documentation, parts inventory, and restoration plan development.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Restoration</h3>
+                    <p>Skilled craftsmen execute the restoration with regular progress updates and your involvement welcomed.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <h3>Delivery</h3>
+                    <p>Final inspection, test drive, and proud handover with complete documentation binder.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <div class="section-label">Testimonials</div>
+                <h2>What Our Clients Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Heritage Garage transformed my father's 1965 Corvette from a rusted shell into a concours-quality show car. The attention to detail was extraordinary. It's not just a car anymore—it's a family treasure."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Michael Reynolds</h4>
+                            <p>1965 Corvette Stingray Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "After visiting five other shops, Heritage was the only one that truly understood my vision for my '69 Camaro. They kept me informed throughout and the result exceeded my wildest expectations."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <h4>Sarah Kowalski</h4>
+                            <p>1969 Camaro SS Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Professional, knowledgeable, and passionate about what they do. My '70 Chevelle SS won Best in Class at its first show. I wouldn't trust my classics with anyone else."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JT</div>
+                        <div class="author-info">
+                            <h4>James Thompson</h4>
+                            <p>1970 Chevelle SS Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2>Ready to Restore Your Dream?</h2>
+            <p>Contact us today for a free consultation and estimate. Let's bring your classic back to life.</p>
+            <div class="cta-buttons">
+                <a href="tel:+15551234567" class="btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call (555) 123-4567
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Request a Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="section-label">Get In Touch</div>
+                <h2>Let's Talk About <span>Your Project</span></h2>
+                <p>
+                    Whether you're ready to start a restoration, have questions about our services, or just want to tour our facility, we'd love to hear from you. Our team is here to help bring your automotive dreams to reality.
+                </p>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>Visit Our Shop</h4>
+                            <p>1234 Classic Drive<br>Detroit, MI 48201</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>Call Us</h4>
+                            <a href="tel:+15551234567">(555) 123-4567</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>Email Us</h4>
+                            <a href="mailto:info@heritagegarage.com">info@heritagegarage.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>Business Hours</h4>
+                            <p>Mon-Fri: 8AM-6PM<br>Saturday: 9AM-3PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Request a Free Estimate</h3>
+                <form id="quoteForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="vehicleYear">Vehicle Year</label>
+                            <input type="text" id="vehicleYear" name="vehicleYear" placeholder="1969">
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleMakeModel">Make & Model</label>
+                            <input type="text" id="vehicleMakeModel" name="vehicleMakeModel" placeholder="Chevrolet Camaro">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceType">Service Needed</label>
+                        <select id="serviceType" name="serviceType">
+                            <option value="">Select a service...</option>
+                            <option value="full-restoration">Full Frame-Off Restoration</option>
+                            <option value="partial-restoration">Partial Restoration</option>
+                            <option value="paint-body">Paint & Body Work</option>
+                            <option value="engine">Engine Rebuilding</option>
+                            <option value="interior">Interior Restoration</option>
+                            <option value="electrical">Electrical Systems</option>
+                            <option value="chrome">Chrome & Brightwork</option>
+                            <option value="consultation">Consultation Only</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell Us About Your Project</label>
+                        <textarea id="message" name="message" placeholder="Describe your vehicle's current condition and your restoration goals..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <span class="logo-text">Heritage <span>Garage</span></span>
+                    </a>
+                    <p>
+                        Restoring automotive legends since 1985. Our passion is preserving the classics that defined American motoring for future generations to enjoy.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Full Restorations</a></li>
+                        <li><a href="#services">Paint & Body</a></li>
+                        <li><a href="#services">Engine Rebuilding</a></li>
+                        <li><a href="#services">Interior Work</a></li>
+                        <li><a href="#services">Electrical</a></li>
+                        <li><a href="#services">Chrome Plating</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#portfolio">Gallery</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Get a Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Shop Hours</h4>
+                    <ul class="footer-hours">
+                        <li><span>Monday</span><span>8AM - 6PM</span></li>
+                        <li><span>Tuesday</span><span>8AM - 6PM</span></li>
+                        <li><span>Wednesday</span><span>8AM - 6PM</span></li>
+                        <li><span>Thursday</span><span>8AM - 6PM</span></li>
+                        <li><span>Friday</span><span>8AM - 6PM</span></li>
+                        <li><span>Saturday</span><span>9AM - 3PM</span></li>
+                        <li><span>Sunday</span><span>Closed</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Heritage Garage. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you within 24 hours to discuss your restoration project.');
+            this.reset();
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenu.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .portfolio-item, .testimonial-card, .process-step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
